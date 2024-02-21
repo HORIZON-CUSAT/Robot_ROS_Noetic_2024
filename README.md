@@ -1,6 +1,4 @@
-Here's the updated README with additional steps for installing some software and configuring environment variables:
 
-```markdown
 # ROS Noetic Installation Guide for Ubuntu 20.04
 
 This guide will walk you through the process of installing ROS Noetic on Ubuntu 20.04. ROS (Robot Operating System) is a flexible framework for writing robot software and is widely used in robotics research and development.
