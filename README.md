@@ -108,9 +108,41 @@ export TURTLEBOT3_MODEL=waffle
 export SVGA_VGPU10=0
 ```
 
-Save the file and exit.
+# Running Horizon Rover
+Got it! Here are the instructions for launching `rosserial` to run Horizon Rover using the serial port:
 
-Congratulations! You have successfully installed ROS Noetic, set up your workspace, installed additional packages, and configured environment variables. You can now start using ROS for your robotics projects and experiments. Happy coding!
+To run the Horizon Rover using ROS Serial, follow these steps:
+
+### Step 1: Launch `roscore`
+
+Open a terminal and launch `roscore`:
+
+```bash
+roscore
 ```
 
-This README includes steps for creating a catkin workspace, installing additional ROS packages (`teleop_twist_keyboard`, `rosserial`), and configuring aliases and environment variables for easier usage.
+### Step 2: Set permissions for the serial port and Run `rosserial` serial node
+
+In another terminal, set permissions for the serial port (assuming your serial port is `/dev/ttyACM0`):
+
+```bash
+sudo chmod 666 /dev/ttyACM0
+rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0 _baud:=57600
+```
+
+### Step 3: Launch teleoperation for TurtleBot3 
+
+If you want to teleoperate the TurtleBot3 for testing purposes, you can launch the teleoperation node:
+
+```bash
+roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+```
+
+### Step 5: Control Horizon Rover
+
+Now you can control the Horizon Rover using ROS commands. If you launched the teleoperation for TurtleBot3, you can control it using the keyboard. Otherwise, you can send appropriate ROS messages to control the Horizon Rover.
+
+Make sure all terminals remain open while you are using the Horizon Rover with ROS Serial.
+
+
+
