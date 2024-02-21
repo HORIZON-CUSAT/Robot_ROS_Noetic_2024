@@ -1,5 +1,6 @@
-Certainly! Here's the updated README with instructions on how to install rosdep:
+Here's the updated README with additional steps for installing some software and configuring environment variables:
 
+```markdown
 # ROS Noetic Installation Guide for Ubuntu 20.04
 
 This guide will walk you through the process of installing ROS Noetic on Ubuntu 20.04. ROS (Robot Operating System) is a flexible framework for writing robot software and is widely used in robotics research and development.
@@ -55,9 +56,46 @@ echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
 
-Congratulations! You have successfully installed ROS Noetic on your Ubuntu 20.04 system and configured rosdep. You can now start using ROS for your robotics projects and experiments. Happy coding!
+## Step 7: Create a catkin workspace and build
 
+Create a catkin workspace and build the project.
 
+```bash
+mkdir -p catkin_ws/src
+cd catkin_ws/src
+git clone https://github.com/HORIZON-CUSAT/Robot_ROS_Noetic_2024.git
+cd ..
+catkin_make
+```
+
+## Step 8: Install teleop twist keyboard package
+
+Install the teleop twist keyboard package for controlling the robot using the keyboard.
+
+```bash
+sudo apt-get install ros-noetic-teleop-twist-keyboard
+```
+
+## Step 9: Install rosserial
+
+Install rosserial for communication with Arduino.
+
+```bash
+sudo apt-get install ros-noetic-rosserial-arduino
+sudo apt-get install ros-noetic-rosserial
+```
+
+## Step 10: Configure aliases and environment variables
+
+Add the following aliases and environment variables to your ~/.bashrc file.
+
+```bash
+gedit ~/.bashrc
+```
+
+Add the following lines to the end of the file:
+
+```bash
 alias burger='export TURTLEBOT3_MODEL=burger'
 alias waffle='export TURTLEBOT3_MODEL=waffle'
 alias tb3fake='roslaunch turtlebot3_fake turtlebot3_fake.launch'
@@ -66,6 +104,15 @@ alias tb3='roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch'
 alias tb3maze='roslaunch turtlebot3_gazebo turtlebot3_world.launch'
 alias tb3house='roslaunch turtlebot3_gazebo turtlebot3_house.launch'
 
+source /opt/ros/noetic/setup.bash
+source ~/catkin_ws/devel/setup.bash
 export TURTLEBOT3_MODEL=waffle
 export SVGA_VGPU10=0
+```
 
+Save the file and exit.
+
+Congratulations! You have successfully installed ROS Noetic, set up your workspace, installed additional packages, and configured environment variables. You can now start using ROS for your robotics projects and experiments. Happy coding!
+```
+
+This README includes steps for creating a catkin workspace, installing additional ROS packages (`teleop_twist_keyboard`, `rosserial`), and configuring aliases and environment variables for easier usage.
