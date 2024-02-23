@@ -60,7 +60,7 @@ Create a catkin workspace and build the project.
 
 ```bash
 mkdir -p catkin_ws/src
-cd catkin_ws/src
+cd catkin_ws
 git clone https://github.com/HORIZON-CUSAT/Robot_ROS_Noetic_2024.git
 cd ..
 catkin_make
