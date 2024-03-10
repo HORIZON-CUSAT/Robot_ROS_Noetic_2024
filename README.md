@@ -144,6 +144,7 @@ Now you can control the Horizon Rover using ROS commands. If you launched the te
 
 Make sure all terminals remain open while you are using the Horizon Rover with ROS Serial.
 
+## Change Log
 
 | Date       | Task No. | Task Name           | Code Changes       | Added Publisher | Added Subscriber |
 |------------|----------|---------------------|--------------------|-----------------|------------------|
